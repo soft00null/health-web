@@ -1,0 +1,1265 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#123e31" />
+    <meta
+      name="description"
+      content="A statewide AI health-assistant vision on WhatsApp: symptom guidance, nearby facilities, scheme benefits, ABHA, consent-based records, appointments, insurance and accountable support. Powered by WoW-Strategies Private Limited."
+    />
+    <title>WhatsUp.Health — Your health. One connected conversation.</title>
+    <link rel="icon" href="./mark.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="./style.css" />
+    <script src="./site.js" defer></script>
+  </head>
+  <body>
+    <a href="#main" class="skip-link">Skip to content</a>
+    <svg class="icon-library" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" /></symbol>
+      <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6" /></symbol>
+      <symbol id="i-chat" viewBox="0 0 24 24">
+        <path
+          d="M21 11.5a8.4 8.4 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.4 8.4 0 0 1-3.8-.9L3 21l1.9-5.7a8.4 8.4 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.4 8.4 0 0 1 3.8-.9h.5a8.5 8.5 0 0 1 8 8v.5Z"
+        />
+        <path d="M8 11h8M8 15h5" />
+      </symbol>
+      <symbol id="i-scan" viewBox="0 0 24 24">
+        <path d="M8 3H3v5M16 3h5v5M21 16v5h-5M3 16v5h5M3 12h18" />
+        <path d="M8 8h3M8 16h3M15 8h1v3M14 15h2v1" />
+      </symbol>
+      <symbol id="i-pin" viewBox="0 0 24 24">
+        <path d="M20 10c0 6-8 11-8 11S4 16 4 10a8 8 0 1 1 16 0Z" />
+        <circle cx="12" cy="10" r="2.5" />
+      </symbol>
+      <symbol id="i-shield" viewBox="0 0 24 24">
+        <path d="m12 3 8 3v6c0 5-8 9-8 9s-8-4-8-9V6l8-3Z" />
+        <path d="m8 12 3 3 5-6" />
+      </symbol>
+      <symbol id="i-clock" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="9" />
+        <path d="M12 7v5l3 2" />
+      </symbol>
+      <symbol id="i-people" viewBox="0 0 24 24">
+        <circle cx="9" cy="8" r="3" />
+        <path d="M3 21v-3a6 6 0 0 1 12 0v3M16 5a3 3 0 0 1 0 6M21 21v-3a6 6 0 0 0-4-5" />
+      </symbol>
+      <symbol id="i-heart" viewBox="0 0 24 24">
+        <path
+          d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0l-1 1-1-1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z"
+        />
+        <path d="M5 11h4l2-3 2 6 2-3h4" />
+      </symbol>
+      <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" /></symbol>
+      <symbol id="i-play" viewBox="0 0 24 24"><path d="m9 5 11 7-11 7V5Z" /></symbol>
+      <symbol id="i-building" viewBox="0 0 24 24">
+        <path
+          d="M4 21V7h5V3h6v4h5v14M2 21h20M10 21v-5h4v5M11 7h2M12 6v2M7 11h1M16 11h1M7 15h1M16 15h1"
+        />
+      </symbol>
+      <symbol id="i-mic" viewBox="0 0 24 24">
+        <rect x="9" y="2" width="6" height="12" rx="3" />
+        <path d="M5 10v2a7 7 0 0 0 14 0v-2M12 19v3M8 22h8" />
+      </symbol>
+      <symbol id="i-photo" viewBox="0 0 24 24">
+        <rect x="3" y="3" width="18" height="18" rx="3" />
+        <circle cx="8" cy="8" r="1.5" />
+        <path d="m21 16-6-6L5 21" />
+      </symbol>
+      <symbol id="i-chart" viewBox="0 0 24 24">
+        <path d="M4 3v17h17M8 15v-4M13 15V7M18 15v-6" />
+      </symbol>
+      <symbol id="i-mail" viewBox="0 0 24 24">
+        <rect x="3" y="5" width="18" height="14" rx="3" />
+        <path d="m3 6 9 7 9-7" />
+      </symbol>
+      <symbol id="i-call" viewBox="0 0 24 24">
+        <path
+          d="M21 16.3v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 1.1 3.5 2 2 0 0 1 3.1 1.3h3a2 2 0 0 1 2 1.7c.1.9.4 1.7.7 2.5a2 2 0 0 1-.5 2.1L7 8.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.8.3 1.7.6 2.5.7a2 2 0 0 1 2.1 2.5Z"
+        />
+      </symbol>
+      <symbol id="i-id" viewBox="0 0 24 24">
+        <rect x="2" y="5" width="20" height="14" rx="3" />
+        <circle cx="8" cy="10" r="2" />
+        <path d="M5 16a3 3 0 0 1 6 0M15 10h4M15 14h4" />
+      </symbol>
+      <symbol id="i-record" viewBox="0 0 24 24">
+        <path
+          d="M14 2H5a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V9l-7-7ZM14 2v7h7M7 13h10M7 17h7"
+        />
+      </symbol>
+      <symbol id="i-calendar" viewBox="0 0 24 24">
+        <rect x="3" y="5" width="18" height="16" rx="3" />
+        <path d="M16 3v4M8 3v4M3 11h18M8 15h2M14 15h2M8 18h2" />
+      </symbol>
+    </svg>
+
+    <header class="header">
+      <div class="nav-wrap container">
+        <a class="brand" href="#home" aria-label="WhatsUp.Health home"
+          ><img src="./mark.svg" width="38" height="38" alt="" /><span
+            >WhatsUp<span class="brand-light">.Health</span
+            ><small class="brand-provider">Powered by WoW-Strategies Private Limited</small></span
+          ></a
+        >
+        <nav class="desktop-nav" aria-label="Main navigation">
+          <a href="#care-services">Health services</a><a href="#for-officials">For health leaders</a
+          ><a href="#contact">Contact</a>
+        </nav>
+        <a class="nav-cta" href="#contact"
+          >Book a walkthrough <svg class="icon"><use href="#i-arrow" /></svg
+        ></a>
+        <button
+          class="menu-button"
+          aria-label="Open navigation"
+          aria-expanded="false"
+          aria-controls="mobile-nav"
+        >
+          <span></span><span></span>
+        </button>
+      </div>
+      <nav id="mobile-nav" class="mobile-nav" aria-label="Mobile navigation" hidden>
+        <a href="#care-services">Health services</a><a href="#for-officials">For health leaders</a
+        ><a href="#coverage">For every state</a><a href="#contact">Book a walkthrough →</a
+        ><a href="/">Official sign in →</a>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section class="hero" id="home">
+        <div class="hero-grid container">
+          <div class="hero-copy">
+            <div class="eyebrow">
+              <span class="live-dot"></span> STATEWIDE HEALTHCARE AI. ON WHATSAPP.
+            </div>
+            <h1>Your health.<br />One connected<br /><em>conversation.</em></h1>
+            <p class="hero-description">
+              The statewide vision: understand a health concern, find nearby care, check benefits
+              and connect records and appointments—all through one familiar conversation.
+            </p>
+            <div class="hero-actions">
+              <a href="#contact" class="button primary"
+                >Book a walkthrough <svg class="icon"><use href="#i-arrow" /></svg></a
+              ><button class="text-button" data-start-demo>
+                <span class="play-icon"
+                  ><svg class="icon"><use href="#i-play" /></svg></span
+                >See it in action
+              </button>
+            </div>
+            <div class="hero-assurances">
+              <span
+                ><svg class="icon"><use href="#i-check" /></svg> Zero learning curve</span
+              ><span
+                ><svg class="icon"><use href="#i-check" /></svg> No app to download</span
+              >
+            </div>
+            <div class="hero-note">
+              <span class="tiny-line"></span> Powered by
+              <strong>WoW-Strategies Private Limited</strong>
+            </div>
+          </div>
+
+          <div class="hero-visual" id="experience">
+            <div class="orbit orbit-one"></div>
+            <div class="orbit orbit-two"></div>
+            <div class="visual-star">✳</div>
+            <div class="float-card facility-float">
+              <span class="float-icon"
+                ><svg class="icon"><use href="#i-building" /></svg
+              ></span>
+              <div>
+                <strong>Your care journey, connected.</strong
+                ><span>Guidance. Benefits. Records. Support.</span>
+              </div>
+            </div>
+            <div class="phone-wrap">
+              <div class="phone">
+                <div class="phone-status">
+                  <span>9:41</span><span class="phone-notch"></span
+                  ><span aria-hidden="true">▮▮▮ ▰</span>
+                </div>
+                <div class="phone-header">
+                  <img src="./mark.svg" width="37" height="37" alt="" />
+                  <div>
+                    <strong>WhatsUp.Health</strong><span><i></i> Here to listen</span>
+                  </div>
+                  <svg class="icon"><use href="#i-shield" /></svg>
+                </div>
+                <div class="language-switch" role="group" aria-label="Demo language">
+                  <button class="active" data-language="en" aria-pressed="true">English</button
+                  ><button data-language="mr" aria-pressed="false" lang="mr">मराठी</button>
+                </div>
+                <div class="journey-picker">
+                  <label for="demo-service">PREVIEW A JOURNEY</label
+                  ><select id="demo-service">
+                    <option value="facilities">Nearby facilities</option>
+                    <option value="symptoms">Symptoms &amp; next steps</option>
+                    <option value="schemes">Schemes &amp; eligible amounts</option>
+                    <option value="abha">ABHA health identity</option>
+                    <option value="records">Connected health records</option>
+                    <option value="booking">Appointments &amp; follow-up</option>
+                    <option value="insurance">Insurance &amp; cashless care</option>
+                    <option value="grievance">Grievances &amp; human support</option>
+                  </select>
+                </div>
+                <div class="conversation" aria-live="polite" aria-atomic="true">
+                  <span class="chat-date">ILLUSTRATIVE CARE JOURNEY</span>
+                  <div class="chat-bubble received">
+                    <span id="demo-greeting">Hello! Let's find your next step.</span>
+                    <div class="facility-inline">
+                      <svg class="icon"><use href="#i-building" /></svg>
+                      <div>
+                        <strong id="demo-facility">Your statewide health assistant</strong
+                        ><span id="demo-location">Care · Benefits · Records</span>
+                      </div>
+                    </div>
+                    <span id="demo-question">How can we help you today?</span
+                    ><span class="bubble-time">9:41</span>
+                  </div>
+                  <div class="chat-bubble sent">
+                    <span id="demo-citizen">Where can I find a health facility near me?</span
+                    ><span class="bubble-time">9:42 <span aria-hidden="true">✓✓</span></span>
+                  </div>
+                  <div class="chat-bubble received acknowledgement">
+                    <span id="demo-ack"
+                      >Start with your village or PIN code. A verified directory can guide you to
+                      nearby care.</span
+                    >
+                    <div class="ticket-mini">
+                      <span id="demo-ticket-label">NEXT STEP</span
+                      ><strong id="demo-reference">Find nearby care</strong
+                      ><span class="status-pill" id="demo-status"
+                        >Directory connection planned</span
+                      >
+                    </div>
+                    <span id="demo-followup">Check opening hours with the facility.</span
+                    ><span class="bubble-time">9:42</span>
+                  </div>
+                </div>
+                <div class="phone-input">
+                  <span id="demo-input-label">Your health. Your next step…</span
+                  ><span class="input-send"
+                    ><svg class="icon"><use href="#i-arrow" /></svg
+                  ></span>
+                </div>
+              </div>
+              <button
+                class="demo-replay"
+                data-start-demo
+                aria-label="Replay the illustrative conversation"
+              >
+                <svg class="icon"><use href="#i-play" /></svg> Play conversation
+              </button>
+            </div>
+            <div class="float-card resolution-float">
+              <span class="resolved-icon"
+                ><svg class="icon"><use href="#i-check" /></svg
+              ></span>
+              <div>
+                <strong>One state. A shared care mission.</strong
+                ><span>Human oversight. Clear next steps.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="promise-strip container">
+          <span>Built for adoption. Designed for action.</span>
+          <div>
+            <svg class="icon"><use href="#i-scan" /></svg> One familiar conversation
+          </div>
+          <div>
+            <svg class="icon"><use href="#i-chat" /></svg> No new app to learn
+          </div>
+          <div>
+            <svg class="icon"><use href="#i-shield" /></svg> Human oversight &amp; consent
+          </div>
+        </div>
+      </section>
+
+      <section class="outcomes section-pad" id="outcomes">
+        <div class="container">
+          <div class="section-heading reveal">
+            <div>
+              <span class="section-label">THE VALUE IS IN WHAT HAPPENS NEXT</span>
+              <h2>A connected citizen journey.<br /><em>A stronger health system.</em></h2>
+            </div>
+            <p>
+              Connect navigation, access, financial protection and continuity of care. Give citizens
+              a clear next step and health leaders a coordinated service model.
+            </p>
+          </div>
+          <div class="outcomes-grid">
+            <article class="outcome-card reveal">
+              <div class="outcome-top">
+                <span>01 / CITIZENS</span><svg class="icon"><use href="#i-chat" /></svg>
+              </div>
+              <h3>Make access<br />feel effortless.</h3>
+              <p>
+                Help people find care, understand benefits and continue their journey in the chat
+                they already use—without learning separate service portals.
+              </p>
+              <div class="outcome-measure">
+                <span>DESIGNED TO SUPPORT</span><strong>Access &amp; confidence</strong>
+              </div>
+            </article>
+            <article class="outcome-card reveal">
+              <div class="outcome-top">
+                <span>02 / CARE TEAMS</span><svg class="icon"><use href="#i-people" /></svg>
+              </div>
+              <h3>Connect the next step<br />in care.</h3>
+              <p>
+                Connect the citizen to the responsible facility, scheme desk or care team, with
+                consent and confirmation at each handoff.
+              </p>
+              <div class="outcome-measure">
+                <span>DESIGNED TO SUPPORT</span><strong>Coordination &amp; continuity</strong>
+              </div>
+            </article>
+            <article class="outcome-card reveal">
+              <div class="outcome-top">
+                <span>03 / HEALTH LEADERS</span><svg class="icon"><use href="#i-chart" /></svg>
+              </div>
+              <h3>See patterns.<br />Set priorities.</h3>
+              <p>
+                Review where citizens need help, which services are connected and where journeys
+                stall. Use confirmed service data to set improvement priorities.
+              </p>
+              <div class="outcome-measure">
+                <span>DESIGNED TO SUPPORT</span><strong>Evidence-led service improvement</strong>
+              </div>
+            </article>
+          </div>
+          <div class="value-chain reveal">
+            <span>ONE CONTINUOUS LOOP</span>
+            <div>
+              <strong>Guide</strong><svg class="icon"><use href="#i-arrow" /></svg
+              ><strong>Connect</strong><svg class="icon"><use href="#i-arrow" /></svg
+              ><strong>Continue</strong><svg class="icon"><use href="#i-arrow" /></svg
+              ><strong>Learn</strong>
+            </div>
+            <span>Citizen experience → management action</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="care-services section-pad" id="care-services">
+        <div class="container">
+          <div class="section-heading reveal">
+            <div>
+              <span class="section-label">THE END-TO-END HEALTH ASSISTANT VISION</span>
+              <h2>One assistant.<br /><em>Every stage of care.</em></h2>
+            </div>
+            <div class="services-intro">
+              <span class="vision-badge">STATEWIDE PRODUCT VISION</span>
+              <p>
+                Eight connected journeys, with service-specific verification, consent and human
+                oversight. Preview the experience below.
+              </p>
+            </div>
+          </div>
+          <div class="care-services-grid">
+            <article class="care-service-card reveal">
+              <div class="service-top">
+                <span class="service-icon"
+                  ><svg class="icon"><use href="#i-heart" /></svg></span
+                ><span class="service-number">01</span>
+              </div>
+              <h3>Symptoms &amp; next steps</h3>
+              <p>
+                Help people describe a concern, understand when clinical assessment is needed and
+                reach the right care team.
+              </p>
+              <span class="service-status">Planned · clinical review</span
+              ><button
+                class="service-preview"
+                data-service="symptoms"
+                aria-label="Preview symptoms and next steps"
+              >
+                Preview journey <svg class="icon"><use href="#i-arrow" /></svg>
+              </button>
+            </article>
+            <article class="care-service-card reveal">
+              <div class="service-top">
+                <span class="service-icon"
+                  ><svg class="icon"><use href="#i-pin" /></svg></span
+                ><span class="service-number">02</span>
+              </div>
+              <h3>Nearest health facility</h3>
+              <p>
+                Find facilities using a village, PIN code or location shared with permission.
+                Confirm services and hours with the facility.
+              </p>
+              <span class="service-status">Planned · directory connection</span
+              ><button
+                class="service-preview"
+                data-service="facilities"
+                aria-label="Preview nearest health facility"
+              >
+                Preview journey <svg class="icon"><use href="#i-arrow" /></svg>
+              </button>
+            </article>
+            <article class="care-service-card reveal">
+              <div class="service-top">
+                <span class="service-icon"
+                  ><svg class="icon"><use href="#i-shield" /></svg></span
+                ><span class="service-number">03</span>
+              </div>
+              <h3>Schemes &amp; eligible amounts</h3>
+              <p>
+                Check relevant government schemes, eligibility, documents and applicable benefit
+                amounts against verified rules and records.
+              </p>
+              <span class="service-status">Planned · scheme verification</span
+              ><button
+                class="service-preview"
+                data-service="schemes"
+                aria-label="Preview schemes and eligible amounts"
+              >
+                Preview journey <svg class="icon"><use href="#i-arrow" /></svg>
+              </button>
+            </article>
+            <article class="care-service-card reveal">
+              <div class="service-top">
+                <span class="service-icon"
+                  ><svg class="icon"><use href="#i-id" /></svg></span
+                ><span class="service-number">04</span>
+              </div>
+              <h3>Create or retrieve ABHA</h3>
+              <p>
+                Guide voluntary health-identity creation or retrieval through official verification,
+                with the citizen’s consent.
+              </p>
+              <span class="service-status">Planned · ABDM connection</span
+              ><button
+                class="service-preview"
+                data-service="abha"
+                aria-label="Preview ABHA health identity"
+              >
+                Preview journey <svg class="icon"><use href="#i-arrow" /></svg>
+              </button>
+            </article>
+            <article class="care-service-card reveal">
+              <div class="service-top">
+                <span class="service-icon"
+                  ><svg class="icon"><use href="#i-record" /></svg></span
+                ><span class="service-number">05</span>
+              </div>
+              <h3>Connected health records</h3>
+              <p>
+                Help citizens link, view and share records from participating care providers through
+                a consent-based journey.
+              </p>
+              <span class="service-status">Planned · connected providers</span
+              ><button
+                class="service-preview"
+                data-service="records"
+                aria-label="Preview connected health records"
+              >
+                Preview journey <svg class="icon"><use href="#i-arrow" /></svg>
+              </button>
+            </article>
+            <article class="care-service-card reveal">
+              <div class="service-top">
+                <span class="service-icon"
+                  ><svg class="icon"><use href="#i-calendar" /></svg></span
+                ><span class="service-number">06</span>
+              </div>
+              <h3>Appointments &amp; follow-up</h3>
+              <p>
+                Discover connected providers and slots, request a visit and receive a confirmed
+                booking, reminders and next steps.
+              </p>
+              <span class="service-status">Planned · provider connection</span
+              ><button
+                class="service-preview"
+                data-service="booking"
+                aria-label="Preview appointments and follow-up"
+              >
+                Preview journey <svg class="icon"><use href="#i-arrow" /></svg>
+              </button>
+            </article>
+            <article class="care-service-card reveal">
+              <div class="service-top">
+                <span class="service-icon"
+                  ><svg class="icon"><use href="#i-shield" /></svg></span
+                ><span class="service-number">07</span>
+              </div>
+              <h3>Insurance &amp; cashless care</h3>
+              <p>
+                Explain policy or scheme cover, network hospitals, required documents and verified
+                claim status through connected services.
+              </p>
+              <span class="service-status">Planned · insurer / assurance connection</span
+              ><button
+                class="service-preview"
+                data-service="insurance"
+                aria-label="Preview insurance and cashless care"
+              >
+                Preview journey <svg class="icon"><use href="#i-arrow" /></svg>
+              </button>
+            </article>
+            <article class="care-service-card reveal">
+              <div class="service-top">
+                <span class="service-icon"
+                  ><svg class="icon"><use href="#i-chat" /></svg></span
+                ><span class="service-number">08</span>
+              </div>
+              <h3>Grievances &amp; human support</h3>
+              <p>
+                Raise a facility concern, follow its ticket and speak with an official. Keep
+                accountability inside the wider care journey.
+              </p>
+              <span class="service-status foundation">Current grievance foundation</span
+              ><button
+                class="service-preview"
+                data-service="grievance"
+                aria-label="Preview grievances and human support"
+              >
+                Preview journey <svg class="icon"><use href="#i-arrow" /></svg>
+              </button>
+            </article>
+          </div>
+          <p class="services-scope">
+            Explore the proposed care experience through prewritten examples. Each service is
+            activated only with its required clinical review, verification and provider connection.
+          </p>
+        </div>
+      </section>
+
+      <section class="journey section-pad" id="how-it-works">
+        <div class="container">
+          <div class="section-heading reveal">
+            <div>
+              <span class="section-label">ONE FAMILIAR ENTRY POINT. A COMPLETE CARE VISION.</span>
+              <h2>Ask. Connect.<br /><em>Carry care forward.</em></h2>
+            </div>
+            <p>
+              A citizen starts with a need. The proposed assistant guides the right service, the
+              required verification and the next confirmed step.
+            </p>
+          </div>
+          <div class="journey-grid">
+            <article class="step-card reveal">
+              <div class="step-top">
+                <span class="step-number">01</span><svg class="icon"><use href="#i-chat" /></svg>
+              </div>
+              <div class="message-illustration">
+                <span>I need help finding care.</span
+                ><span lang="mr"
+                  >तुम्हाला कोणती मदत हवी आहे? <svg class="icon"><use href="#i-check" /></svg
+                ></span>
+              </div>
+              <h3>Start where you are.</h3>
+              <p>
+                Open the statewide chat or scan an activated facility code. Tell the assistant what
+                you need in a familiar conversation.
+              </p>
+              <span class="step-footer"
+                >Your need sets the journey <svg class="icon"><use href="#i-arrow" /></svg
+              ></span>
+            </article>
+            <article class="step-card reveal">
+              <div class="step-top">
+                <span class="step-number">02</span><svg class="icon"><use href="#i-pin" /></svg>
+              </div>
+              <div class="scan-illustration">
+                <div class="scan-corners">
+                  <svg class="icon"><use href="#i-building" /></svg><span class="scan-beam"></span>
+                </div>
+                <span>THE RIGHT SERVICE. THE RIGHT TEAM.</span>
+              </div>
+              <h3>Find the right next step.</h3>
+              <p>
+                Connect to facility information, scheme guidance, identity verification or an
+                available care team through approved service connections.
+              </p>
+              <span class="step-footer"
+                >Guidance with a verified source <svg class="icon"><use href="#i-arrow" /></svg
+              ></span>
+            </article>
+            <article class="step-card reveal">
+              <div class="step-top">
+                <span class="step-number">03</span><svg class="icon"><use href="#i-check" /></svg>
+              </div>
+              <div class="progress-illustration">
+                <div>
+                  <span class="progress-dot done"></span>Permission
+                  <svg class="icon"><use href="#i-check" /></svg>
+                </div>
+                <div>
+                  <span class="progress-dot done"></span>Confirmation
+                  <svg class="icon"><use href="#i-check" /></svg>
+                </div>
+                <div class="progress-last">
+                  <span class="progress-dot"></span>Follow-up
+                  <svg class="icon"><use href="#i-check" /></svg>
+                </div>
+              </div>
+              <h3>Continue with confidence.</h3>
+              <p>
+                Approve necessary access, receive the service provider's confirmation and follow the
+                next step. A person takes over when judgement is needed.
+              </p>
+              <span class="step-footer"
+                >Connected care, human responsibility <svg class="icon"><use href="#i-arrow" /></svg
+              ></span>
+            </article>
+          </div>
+          <div class="citizen-note reveal">
+            <svg class="icon"><use href="#i-heart" /></svg>
+            <p>
+              <strong>A statewide product vision.</strong> The current foundation supports facility
+              grievances. Additional care journeys require approved clinical content and connected
+              services before activation.
+            </p>
+            <a href="#connections"
+              >See the service connections <svg class="icon"><use href="#i-arrow" /></svg
+            ></a>
+          </div>
+        </div>
+      </section>
+
+      <section class="access section-pad" id="access">
+        <div class="container">
+          <div class="section-heading reveal">
+            <div>
+              <span class="section-label">A FAMILIAR CHANNEL. AN INCLUSIVE AMBITION.</span>
+              <h2>Type. Speak. Show.<br /><em>Feel understood.</em></h2>
+            </div>
+            <p>
+              The product vision is simple: communicate in any Indian regional language, using the
+              format that feels natural to you.
+            </p>
+          </div>
+          <div class="channel-grid">
+            <article class="channel-card reveal">
+              <div class="channel-top">
+                <svg class="icon"><use href="#i-chat" /></svg
+                ><span class="capability-status">Available</span>
+              </div>
+              <div class="channel-art text-art">
+                <span>I couldn't get my medicine.</span
+                ><span lang="mr">कृपया तुमच्या तक्रारीचा तपशील सांगा.</span>
+              </div>
+              <h3>Write in your own words.</h3>
+              <p>
+                Describe what happened in a simple message. Guided replies keep the next step clear.
+              </p>
+              <span class="channel-footnote">Grievance foundation: English &amp; Marathi</span>
+            </article>
+            <article class="channel-card reveal">
+              <div class="channel-top">
+                <svg class="icon"><use href="#i-mic" /></svg
+                ><span class="capability-status planned">Product roadmap</span>
+              </div>
+              <div class="channel-art audio-art" aria-label="Illustration of a voice message">
+                <span class="audio-play"
+                  ><svg class="icon"><use href="#i-mic" /></svg
+                ></span>
+                <div class="waveform" aria-hidden="true">
+                  <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i
+                  ><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+                </div>
+                <span>0:18</span>
+              </div>
+              <h3>Speak as you would to a person.</h3>
+              <p>
+                The voice-support vision gives people a way to explain a concern without typing a
+                long message.
+              </p>
+              <span class="channel-footnote">Voice intake &amp; transcription: planned</span>
+            </article>
+            <article class="channel-card reveal">
+              <div class="channel-top">
+                <svg class="icon"><use href="#i-photo" /></svg
+                ><span class="capability-status">Available</span>
+              </div>
+              <div class="channel-art photo-art">
+                <div class="photo-scene">
+                  <svg class="icon"><use href="#i-building" /></svg
+                  ><span class="photo-label"
+                    ><svg class="icon"><use href="#i-check" /></svg> Photo attached</span
+                  >
+                </div>
+              </div>
+              <h3>Show what words cannot.</h3>
+              <p>
+                Add a photo to give the responsible team useful context about the facility concern.
+              </p>
+              <span class="channel-footnote">Photos retained with the ticket history</span>
+            </article>
+          </div>
+          <div class="language-vision reveal">
+            <div>
+              <span class="section-label">THE BROADER LANGUAGE VISION</span>
+              <h3>Every Indian regional language.<br />Every voice welcome.</h3>
+            </div>
+            <div class="language-vision-right">
+              <div class="language-chips">
+                <span lang="mr">मराठी</span><span>Hindi</span><span>Gujarati</span
+                ><span>Bengali</span><span>Tamil</span><span>Telugu</span><span>Kannada</span
+                ><span>Malayalam</span><span>Punjabi</span><span>Odia</span><span>Assamese</span
+                ><span>Urdu</span><span>…and more</span>
+              </div>
+              <p>
+                Additional language coverage is planned. Confirm language and voice availability
+                when defining your rollout.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="connections section-pad" id="connections">
+        <div class="container">
+          <div class="section-heading reveal">
+            <div>
+              <span class="section-label">THE CONNECTIONS THAT MAKE CARE CONTINUOUS</span>
+              <h2>Identity. Records. Benefits.<br /><em>Connected with consent.</em></h2>
+            </div>
+            <p>
+              The proposed assistant guides the journey. Official services, care providers and
+              scheme authorities verify and confirm the outcome.
+            </p>
+          </div>
+          <div class="connections-grid">
+            <article class="connection-card identity-card reveal">
+              <span class="connection-kicker">ABHA &amp; ABDM · PLANNED INTEGRATION</span>
+              <h3>A connected health identity.<br />A citizen-controlled record.</h3>
+              <p>
+                Guide ABHA creation or retrieval through official verification. Link and share
+                records from participating providers through the citizen’s permission.
+              </p>
+              <div class="consent-diagram">
+                <span
+                  ><svg class="icon"><use href="#i-id" /></svg> Your identity</span
+                ><svg class="icon"><use href="#i-arrow" /></svg
+                ><span
+                  ><svg class="icon"><use href="#i-shield" /></svg> Your consent</span
+                ><svg class="icon"><use href="#i-arrow" /></svg
+                ><span
+                  ><svg class="icon"><use href="#i-record" /></svg> Your records</span
+                >
+              </div>
+              <p class="connection-detail">
+                The proposed flow should make the purpose, receiving provider, records and access
+                period clear before sharing. Citizens must be able to manage their permissions.
+              </p>
+              <a
+                class="source-link"
+                href="https://abdm.gov.in/strapicms/uploads/ABHA_Brochure_Piano_final_b972459053.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Official health-identity and records guidance ↗</a
+              >
+            </article>
+            <article class="connection-card benefit-card reveal">
+              <span class="connection-kicker">SCHEMES &amp; INSURANCE · PLANNED INTEGRATION</span>
+              <h3>Explain the benefit.<br />Verify the amount.</h3>
+              <p>
+                Show what applies to the citizen and the treatment using the relevant authority’s
+                verified information.
+              </p>
+              <div class="benefit-rows">
+                <div>
+                  <span>Eligibility</span><strong>Match official rules and documents</strong>
+                </div>
+                <div>
+                  <span>Covered treatment</span><strong>Confirm the applicable package</strong>
+                </div>
+                <div>
+                  <span>Eligible amount</span><strong>Verify the benefit, limit or payment</strong>
+                </div>
+                <div>
+                  <span>Available cover</span><strong>Check official utilisation records</strong>
+                </div>
+              </div>
+              <p class="connection-detail">
+                An annual coverage cap, an approved treatment package and a cash benefit are
+                different amounts. Final entitlement and claim approval remain with the authority or
+                insurer.
+              </p>
+              <a
+                class="source-link"
+                href="https://nha.gov.in/img/resources/Operation%20Manual%20for%20AB%20PM-JAY.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Official national health-assurance reference ↗</a
+              >
+            </article>
+          </div>
+          <div class="connection-network reveal">
+            <span class="section-label">PROPOSED SERVICE CONNECTIONS</span>
+            <div>
+              <span>State facility directory</span><span>Government scheme authorities</span
+              ><span>ABHA &amp; ABDM</span><span>Participating care providers</span
+              ><span>Insurers &amp; assurance programmes</span><span>Department support teams</span>
+            </div>
+          </div>
+          <div class="deployment-clarity reveal">
+            <svg class="icon"><use href="#i-shield" /></svg>
+            <p>
+              <strong>Clear rollout scope.</strong> Facility grievances, official routing and
+              English/Marathi text with photos are the current foundation. Symptom support, citizen
+              facility discovery, benefit checks, ABHA, connected records, booking and insurance
+              connections are proposed services. Activation requires the relevant approvals,
+              verified sources and service-provider connections.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="officials section-pad" id="for-officials">
+        <div class="container">
+          <div class="section-heading reveal">
+            <div>
+              <span class="section-label">ONE STATE. A COORDINATED SERVICE MODEL.</span>
+              <h2>Connected care.<br /><em>Accountable operations.</em></h2>
+            </div>
+            <p>
+              The statewide vision connects citizen journeys with responsible care teams. The
+              existing grievance workspace provides the first layer of departmental accountability.
+            </p>
+          </div>
+          <div class="official-grid">
+            <article class="workspace-card reveal">
+              <div class="workspace-top">
+                <span><span class="live-dot"></span> CURRENT GRIEVANCE FOUNDATION</span
+                ><span class="sample-label">Illustrative view</span>
+              </div>
+              <div class="workspace-title">
+                <h3>Care you can follow through.</h3>
+                <svg class="icon"><use href="#i-arrow" /></svg>
+              </div>
+              <div class="mock-toolbar">
+                <span class="mock-brand"
+                  ><img src="./mark.svg" width="23" height="23" alt="" /> Grievance overview</span
+                ><span class="mock-filter">District office⌄</span>
+              </div>
+              <div class="board">
+                <div class="board-column">
+                  <div class="board-label"><i></i> New <span>01</span></div>
+                  <div class="board-ticket">
+                    <span class="category-tag">Medicine unavailable</span
+                    ><strong>Prescription could not be filled</strong
+                    ><span class="ticket-place"
+                      ><svg class="icon"><use href="#i-pin" /></svg> Health centre</span
+                    >
+                    <div class="ticket-bottom">
+                      <span>WH-DEMO-001</span><span class="small-avatar">DO</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="board-column">
+                  <div class="board-label"><i></i> In progress <span>01</span></div>
+                  <div class="board-ticket">
+                    <span class="category-tag amber">Long wait</span
+                    ><strong>Reviewing the waiting time</strong
+                    ><span class="ticket-place"
+                      ><svg class="icon"><use href="#i-people" /></svg> Assigned to in-charge</span
+                    >
+                    <div class="ticket-bottom">
+                      <span>WH-DEMO-002</span><span class="small-avatar peach">FI</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="board-column">
+                  <div class="board-label"><i></i> Resolved <span>01</span></div>
+                  <div class="board-ticket">
+                    <span class="category-tag">Cleanliness</span
+                    ><strong>Facility team has taken action</strong
+                    ><span class="ticket-place"
+                      ><svg class="icon"><use href="#i-check" /></svg> Citizen updated</span
+                    >
+                    <div class="ticket-bottom">
+                      <span>WH-DEMO-003</span><span class="small-avatar">✓</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="workspace-caption">
+                <svg class="icon"><use href="#i-shield" /></svg> Every action has a record. Every
+                ticket has a timeline.
+              </div>
+            </article>
+            <article class="feature-card reveal">
+              <span class="feature-icon"
+                ><svg class="icon"><use href="#i-people" /></svg
+              ></span>
+              <h3>AI guidance. Professional judgement.</h3>
+              <p>
+                Use approved information for routine guidance. Route clinical questions to qualified
+                care teams and administrative concerns to the responsible official.
+              </p>
+              <div class="handoff-mini">
+                <span class="mini-avatar">FI</span><span>Facility in-charge has joined</span
+                ><span class="live-dot"></span>
+              </div>
+            </article>
+            <article class="feature-card reveal">
+              <span class="feature-icon"
+                ><svg class="icon"><use href="#i-clock" /></svg
+              ></span>
+              <h3>Make the next action visible.</h3>
+              <p>
+                Assign responsibility, track resolution deadlines and escalate unresolved cases.
+                Alerts keep the responsible team informed as the case progresses.
+              </p>
+              <div class="due-mini">
+                <span class="due-line"></span><span>Received</span><span>Assigned</span
+                ><span>Follow-up</span>
+              </div>
+            </article>
+            <article class="feature-card wide-feature reveal">
+              <span class="feature-icon"
+                ><svg class="icon"><use href="#i-shield" /></svg
+              ></span>
+              <div>
+                <h3>Connected services. Defined ownership.</h3>
+                <p>
+                  The grievance foundation already scopes officials by jurisdiction. The expanded
+                  vision adds service ownership for care referrals, benefit checks and follow-up as
+                  each connection is activated.
+                </p>
+              </div>
+              <a href="/" class="light-link"
+                >Enter the official portal <svg class="icon"><use href="#i-arrow" /></svg
+              ></a>
+            </article>
+          </div>
+          <div class="leadership-scorecard reveal">
+            <div>
+              <span class="section-label">THE CURRENT GRIEVANCE REVIEW SCORECARD</span>
+              <h3>Measure the response.<br />Improve the service.</h3>
+            </div>
+            <div class="scorecard-metrics">
+              <span
+                ><svg class="icon"><use href="#i-clock" /></svg> Resolution time</span
+              ><span
+                ><svg class="icon"><use href="#i-shield" /></svg> Deadline breaches</span
+              ><span
+                ><svg class="icon"><use href="#i-chart" /></svg> Recurring categories</span
+              ><span
+                ><svg class="icon"><use href="#i-building" /></svg> Facility-level trends</span
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="coverage section-pad" id="coverage">
+        <div class="coverage-grid container">
+          <div class="coverage-copy reveal">
+            <span class="section-label">A SHARED HEALTH VISION. A LOCAL PLAN FOR EVERY STATE.</span>
+            <h2>Every state.<br />Local priorities.<br /><em>Connected care.</em></h2>
+            <p>
+              Shape the assistant around your state’s languages, facility network, government
+              schemes and care pathways. Give citizens one familiar entry point into the services
+              that matter to them.
+            </p>
+            <div class="state-priorities">
+              <div>
+                <svg class="icon"><use href="#i-chat" /></svg
+                ><span
+                  ><strong>Speak to your citizens.</strong>Local languages and accessible
+                  journeys.</span
+                >
+              </div>
+              <div>
+                <svg class="icon"><use href="#i-shield" /></svg
+                ><span
+                  ><strong>Reflect your programmes.</strong>State-specific schemes, benefits and
+                  verification.</span
+                >
+              </div>
+              <div>
+                <svg class="icon"><use href="#i-people" /></svg
+                ><span
+                  ><strong>Fit your care model.</strong>Local ownership, provider connections and
+                  escalation.</span
+                >
+              </div>
+            </div>
+          </div>
+          <div class="state-network reveal">
+            <div class="network-caption">
+              <span><span class="live-dot"></span> YOUR STATE’S CONNECTED CARE VISION</span
+              ><svg class="icon"><use href="#i-heart" /></svg>
+            </div>
+            <div class="network-entry">
+              <svg class="icon"><use href="#i-chat" /></svg
+              ><span>A citizen’s familiar conversation</span>
+            </div>
+            <div class="network-spine" aria-hidden="true"></div>
+            <div class="network-hub">
+              <img src="./mark.svg" width="42" height="42" alt="" /><strong>WhatsUp.Health</strong
+              ><span>One entry point. Coordinated next steps.</span>
+            </div>
+            <div class="network-spine" aria-hidden="true"></div>
+            <div class="network-services">
+              <div>
+                <svg class="icon"><use href="#i-building" /></svg><strong>Care network</strong
+                ><span>Facilities &amp; appointments</span>
+              </div>
+              <div>
+                <svg class="icon"><use href="#i-shield" /></svg><strong>Financial protection</strong
+                ><span>Schemes &amp; insurance</span>
+              </div>
+              <div>
+                <svg class="icon"><use href="#i-record" /></svg><strong>Continuity of care</strong
+                ><span>Identity &amp; records</span>
+              </div>
+              <div>
+                <svg class="icon"><use href="#i-people" /></svg><strong>Human accountability</strong
+                ><span>State &amp; district teams</span>
+              </div>
+            </div>
+            <p class="network-note">
+              Configure locally. Connect priority services. Validate before scaling.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="concerns-section">
+        <div class="container concerns-inner">
+          <span class="section-label">ACCOUNTABILITY REMAINS PART OF THE JOURNEY</span>
+          <h2>When care falls short, the citizen still has a voice.</h2>
+          <div class="concern-tags">
+            <span>Staff behaviour</span><span>Medicine unavailable</span><span>Cleanliness</span
+            ><span>Delay or long wait</span><span>Doctor absent</span><span>Charging or bribe</span
+            ><span>Equipment or infrastructure</span><span>Ambulance</span
+            ><span>Other concerns</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="faq section-pad" id="questions">
+        <div class="container faq-grid">
+          <div class="reveal">
+            <span class="section-label">CLARITY ACROSS THE CARE JOURNEY</span>
+            <h2>Trust starts<br /><em>with clear answers.</em></h2>
+            <p>What citizens can expect, and what a statewide rollout must connect.</p>
+            <div class="faq-mark" aria-hidden="true">
+              <svg class="icon"><use href="#i-chat" /></svg>
+            </div>
+          </div>
+          <div class="faq-list reveal">
+            <details>
+              <summary>
+                What does “zero learning curve” mean?<svg class="icon"><use href="#i-plus" /></svg>
+              </summary>
+              <p>
+                Citizens use a familiar WhatsApp conversation, with no separate app or service
+                portal to learn. The proposed assistant guides the next step for each connected
+                service.
+              </p>
+            </details>
+            <details open>
+              <summary>
+                Which services are available today?<svg class="icon"><use href="#i-plus" /></svg>
+              </summary>
+              <p>
+                The existing foundation supports facility grievances, ticket tracking, official
+                handoff and the departmental workspace. The wider health assistant is the product
+                vision: its previews do not perform medical assessments, eligibility checks, ABHA
+                creation, record retrieval, bookings or claims.
+              </p>
+            </details>
+            <details>
+              <summary>
+                Will the assistant diagnose symptoms or prescribe treatment?<svg class="icon">
+                  <use href="#i-plus" />
+                </svg>
+              </summary>
+              <p>
+                Symptom support is planned as clinically reviewed guidance and care navigation.
+                Diagnosis and treatment decisions belong to qualified healthcare professionals.
+                Urgent needs should go directly to emergency care.
+              </p>
+            </details>
+            <details>
+              <summary>
+                How will eligibility and eligible amounts be checked?<svg class="icon">
+                  <use href="#i-plus" />
+                </svg>
+              </summary>
+              <p>
+                The proposed journey checks the relevant scheme or policy, citizen documents,
+                covered treatment and verified benefit information. An amount is confirmed by the
+                responsible authority or insurer. A coverage limit is not a promise of cash payment.
+              </p>
+            </details>
+            <details>
+              <summary>
+                How will ABHA and health records work?<svg class="icon"><use href="#i-plus" /></svg>
+              </summary>
+              <p>
+                The vision is to guide voluntary ABHA creation or retrieval through official
+                verification and connect records from participating providers through explicit
+                consent. These connections are planned. ABHA connects health identity and records;
+                scheme or insurance entitlement is checked separately.
+              </p>
+            </details>
+            <details>
+              <summary>
+                Who confirms appointments and insurance claims?<svg class="icon">
+                  <use href="#i-plus" />
+                </svg>
+              </summary>
+              <p>
+                Participating providers confirm appointment slots and bookings. The relevant scheme
+                authority or insurer confirms cover and claim decisions. The assistant should show
+                only verified confirmations and status from those connected services.
+              </p>
+            </details>
+            <details>
+              <summary>
+                Which languages and formats are supported?<svg class="icon">
+                  <use href="#i-plus" />
+                </svg>
+              </summary>
+              <p>
+                The current grievance foundation supports English and Marathi text, plus photos. The
+                wider vision includes every Indian regional language, voice and images. Expanded
+                language and voice coverage is planned and must be confirmed for the rollout.
+              </p>
+            </details>
+            <details>
+              <summary>
+                Can citizens use the service anonymously?<svg class="icon">
+                  <use href="#i-plus" />
+                </svg>
+              </summary>
+              <p>
+                Anonymous filing is available for grievances. Health identity, record sharing,
+                appointments and insurance journeys require the appropriate verification and
+                consent. Each journey must explain which details it needs and why.
+              </p>
+            </details>
+            <details>
+              <summary>
+                Is this a service for medical emergencies?<svg class="icon">
+                  <use href="#i-plus" />
+                </svg>
+              </summary>
+              <p>
+                For urgent medical help, contact your nearest emergency department or local
+                emergency service directly. The website is a product preview and does not provide an
+                emergency response or clinical assessment.
+              </p>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <section class="closing-section" id="contact">
+        <div class="container closing-card reveal">
+          <div class="closing-art" aria-hidden="true">
+            <svg class="icon"><use href="#i-heart" /></svg>
+          </div>
+          <span class="section-label">START WITH A FOCUSED PILOT. BUILD WITH PURPOSE.</span>
+          <h2>Bring the whole state<br />into a <em>connected care journey.</em></h2>
+          <p>
+            Scope a statewide assistant around priority citizen journeys, approved clinical guidance
+            and the service connections your programme needs.
+          </p>
+          <div class="pilot-path">
+            <span><b>01</b> Define the scope</span><svg class="icon"><use href="#i-arrow" /></svg
+            ><span><b>02</b> Connect priority services</span
+            ><svg class="icon"><use href="#i-arrow" /></svg
+            ><span><b>03</b> Validate journeys &amp; scale</span>
+          </div>
+          <div class="closing-actions">
+            <a
+              href="mailto:hello@wow-strategies.com?subject=WhatsUp.Health%20walkthrough"
+              class="button light"
+              >Book a walkthrough <svg class="icon"><use href="#i-arrow" /></svg></a
+            ><a href="tel:+912248808695" class="closing-link"
+              ><svg class="icon"><use href="#i-call" /></svg> 022 4880 8695</a
+            >
+          </div>
+          <a class="contact-email" href="mailto:hello@wow-strategies.com"
+            >hello@wow-strategies.com</a
+          >
+          <p class="contact-purpose">For product enquiries and implementation discussions.</p>
+          <div class="powered-by">
+            <span>POWERED BY</span><strong>WoW-Strategies Private Limited</strong>
+          </div>
+          <span class="closing-note"
+            >Every citizen. Every language. A shared commitment to care.</span
+          >
+        </div>
+        <div class="audience-links container">
+          <span>Current citizen grievance service: scan the activated code at your facility.</span
+          ><a href="/"
+            >Already an official? Sign in <svg class="icon"><use href="#i-arrow" /></svg
+          ></a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer" id="footer">
+      <div class="container">
+        <div class="footer-invitation">
+          <div>
+            <span class="section-label">FOR STATE HEALTH LEADERS ACROSS INDIA</span>
+            <h2>One health mission.<br /><em>A plan shaped for your state.</em></h2>
+          </div>
+          <a
+            href="mailto:hello@wow-strategies.com?subject=WhatsUp.Health%20state%20programme%20discussion"
+            class="button primary"
+            >Discuss your state programme <svg class="icon"><use href="#i-arrow" /></svg
+          ></a>
+        </div>
+        <div class="footer-grid">
+          <div class="footer-brand-column">
+            <a href="#home" class="brand"
+              ><img src="./mark.svg" width="43" height="43" alt="" /><span
+                >WhatsUp<span class="brand-light">.Health</span></span
+              ></a
+            >
+            <p>
+              One familiar conversation connecting citizens to care, benefits and the people who can
+              help.
+            </p>
+            <div class="footer-attribution">
+              <span>POWERED BY</span><strong>WoW-Strategies Private Limited</strong>
+            </div>
+          </div>
+          <nav class="footer-nav" aria-label="Explore the health assistant">
+            <h3>Explore</h3>
+            <a href="#care-services">Health services</a
+            ><a href="#how-it-works">The citizen journey</a><a href="#connections">Connected care</a
+            ><a href="#access">Languages &amp; formats</a>
+          </nav>
+          <nav class="footer-nav" aria-label="Information for state programmes">
+            <h3>For state programmes</h3>
+            <a href="#for-officials">Health leadership</a
+            ><a href="#coverage">Your state’s care model</a
+            ><a href="#questions">Questions &amp; answers</a
+            ><a href="/">Official sign in <span aria-hidden="true">↗</span></a>
+          </nav>
+          <div class="footer-contact">
+            <h3>Let’s talk</h3>
+            <a href="tel:+912248808695"
+              ><svg class="icon"><use href="#i-call" /></svg><span>022 4880 8695</span></a
+            ><a href="mailto:hello@wow-strategies.com"
+              ><svg class="icon"><use href="#i-mail" /></svg
+              ><span>hello@wow-strategies.com</span></a
+            >
+            <p>For product enquiries and state programme discussions.</p>
+            <a href="#contact" class="footer-walkthrough"
+              >Book a walkthrough <svg class="icon"><use href="#i-arrow" /></svg
+            ></a>
+          </div>
+        </div>
+        <div class="footer-legal">
+          <span>© <span id="year">2026</span> WhatsUp.Health</span
+          ><span>Built around India’s citizens. Shaped for each state.</span
+          ><a href="#home">Back to top <span aria-hidden="true">↑</span></a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
